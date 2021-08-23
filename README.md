@@ -1,6 +1,6 @@
 # Table of Contents
 <!--ts-->
-   * [Openshift Setup](#openshift setup)
+   * [Openshift Setup](#openshift-setup)
    * [Openshift CI/CD Pipeline](#openshift-cicd-pipeline)
 <!--te-->
 
