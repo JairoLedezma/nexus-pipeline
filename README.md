@@ -1,6 +1,6 @@
 # Table of Contents
 <!--ts-->
-   * [Sample DMN Project Deployment](#Openshift Setup)
+   * [Openshift Setup](#Openshift Setup)
    * [Openshift CI/CD Pipeline](#openshift-cicd-pipeline)
 <!--te-->
 
