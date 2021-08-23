@@ -2,6 +2,7 @@
 <!--ts-->
    * [Openshift Setup](#openshift-setup)
    * [Openshift CI/CD Pipeline](#openshift-cicd-pipeline)
+   * [Run a Build](#run-a-buid)
 <!--te-->
 
 # Openshift Setup
@@ -234,6 +235,7 @@ Default login credentials:
    Hit **Apply & Save**
 
 Run the pipeline:
+# Run a Build
 
  - Click on Build with Parameters
   - IT_URL : https://github.com/JairoLedezma/ocp4-cicd-pipeline.git
