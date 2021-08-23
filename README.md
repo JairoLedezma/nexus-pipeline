@@ -1,10 +1,10 @@
 # Table of Contents
 <!--ts-->
-   * [Sample DMN Project Deployment](#sample-dmn-Project)
+   * [Sample DMN Project Deployment](#Openshift Setup)
    * [Openshift CI/CD Pipeline](#openshift-cicd-pipeline)
 <!--te-->
 
-# CI/CD Pipeline in OCP4
+# Openshift Setup
 - This repository contains the source code for a sample DMN Project which implements the iteration over list of objects on each of which business logic validation is performed.
 - It can be deployed directly to a `Immutable Kie-server-v7.11.0` running on a openshift cluster configured for S2I(Source to Image).
 - This guide has the template of the kie server in the template folder, aswell as the environment variables that are needed to run it. 
