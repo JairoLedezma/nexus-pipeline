@@ -2,7 +2,7 @@
 <!--ts-->
    * [Openshift Setup](#openshift-setup)
    * [Openshift CI/CD Pipeline](#openshift-cicd-pipeline)
-   * [Run a Build](#run-a-buid)
+   * [Run a Build](#run-a-build)
 <!--te-->
 
 # Openshift Setup
