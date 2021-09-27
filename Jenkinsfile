@@ -65,7 +65,7 @@ pipeline {
                     // Find built artifact under target folder
                 
 
-                    if(artifactExists) {
+                    
                         
                         nexusArtifactUploader(
                             nexusVersion: NEXUS_VERSION,
@@ -92,7 +92,7 @@ pipeline {
                         error "*** File: ${artifactPath}, could not be found";
                     }
                 }
-            }
+            
         }
         stage ('Building and Pushing Image to Quay') {
             steps {
