@@ -40,7 +40,7 @@ pipeline {
                            
                            if( NEW_PROJECT ){
                                  try {
-                                    processedTemplate = openshift.process( "-f", "./template/template-create.yaml", "--param-file=./template/template-create.env")
+                                    processedTemplate = openshift.process( "-f", "./templates/template-create.yaml", "--param-file=./templates/template-create.env")
                                     def createResources = openshift.create( processedTemplate )
                                     createResources.logs('-f')
                                     
