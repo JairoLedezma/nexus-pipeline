@@ -77,7 +77,7 @@ pipeline {
                             credentialsId: NEXUS_CREDENTIAL_ID,
                             artifacts: [
                                 // Artifact generated such as .jar, .ear and .war files.
-                                [file: 'IterationDemo-1.0.0-SNAPSHOT.jar',
+                                [file: 'target/IterationDemo-1.0.0-SNAPSHOT.jar',
                                 type: 'kjar'],
 
                                 // Lets upload the pom.xml file for additional information for Transitive dependencies
