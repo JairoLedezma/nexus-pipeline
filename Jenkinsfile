@@ -60,18 +60,17 @@ pipeline {
         stage("publish to nexus") {
             steps {
                 script {
-                    pom = readMavenPom file: "pom.xml";
                     // Read POM xml file using 'readMavenPom' step , this step 'readMavenPom' is included in: https://plugins.jenkins.io/pipeline-utility-steps
                     nexusArtifactUploader {
-                        nexusVersion: NEXUS_VERSION
-                        protocol: NEXUS_PROTOCOL
-                        nexusUrl: NEXUS_URL 
-                        groupId: pom.groupId
-                        version: pom.version
-                        repository: NEXUS_REPOSITORY
-                        credentialsId: NEXUS_CREDENTIAL_ID
+                        nexusVersion('nexus3')
+                        protocol('http')
+                        nexusUrl('localhost:8081/nexus')
+                        groupId('com.myspace')
+                        version('1.0.0-SNAPSHOT')
+                        repository('nexus-repo')
+                        credentialsId('nexus-credentials')
                         artifact {
-                            artifactId(pom.artifactId)
+                            artifactId('IterationDemo')
                             type('jar')
                             classifier('debug')
                         file('IterationDemo-1.0.0-SNAPSHOT.jar')
