@@ -76,7 +76,7 @@ pipeline {
                             classifier('debug')
                         file('IterationDemo-1.0.0-SNAPSHOT.jar')
                         }
-      }
+                    }
                 
          }
         stage ('Building and Pushing Image to Quay') {
@@ -107,5 +107,5 @@ pipeline {
     }
 
 }
-
     }
+}
