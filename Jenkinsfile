@@ -63,15 +63,15 @@ pipeline {
                     pom = readMavenPom file: "pom.xml";
                     // Read POM xml file using 'readMavenPom' step , this step 'readMavenPom' is included in: https://plugins.jenkins.io/pipeline-utility-steps
                     nexusArtifactUploader {
-                        nexusVersion(NEXUS_VERSION)
-                        protocol(NEXUS_PROTOCOL)
-                        nexusUrl(NEXUS_URL)
-                        groupId(${pom.groupId})
-                        version(${pom.version})
-                        repository(NEXUS_REPOSITORY)
-                        credentialsId(NEXUS_CREDENTIAL_ID)
+                        nexusVersion: NEXUS_VERSION
+                        protocol: NEXUS_PROTOCOL
+                        nexusUrl: NEXUS_URL 
+                        groupId: pom.groupId
+                        version: pom.version
+                        repository: NEXUS_REPOSITORY
+                        credentialsId: NEXUS_CREDENTIAL_ID
                         artifact {
-                            artifactId('nexus-artifact-uploader')
+                            artifactId(pom.artifactId)
                             type('jar')
                             classifier('debug')
                         file('IterationDemo-1.0.0-SNAPSHOT.jar')
