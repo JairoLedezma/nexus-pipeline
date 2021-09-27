@@ -26,6 +26,7 @@ pipeline {
         stage ('Maven Build') {
             steps {
                   sh "mvn install"
+                    sh "mvn package -DskipTests=true"
             }
         }
      
