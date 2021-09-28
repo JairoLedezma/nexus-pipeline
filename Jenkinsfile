@@ -5,6 +5,7 @@ pipeline {
         maven 'maven-3.6.3'
         jdk 'jdk11'
     }
+    /*
     environment {
         // This can be nexus3 or nexus2
         NEXUS_VERSION = "nexus3"
@@ -16,7 +17,7 @@ pipeline {
         NEXUS_REPOSITORY = "nexus-repo"
         // Jenkins credential id to authenticate to Nexus OSS
         NEXUS_CREDENTIAL_ID = "nexus-credentials"
-    }
+    }*/
     stages {
         stage('Fetching Git Repository') {
             steps {
@@ -56,7 +57,7 @@ pipeline {
            }
         }
         
-        */
+        
         stage("publish to nexus") {
             steps {
                 script {
@@ -92,6 +93,8 @@ pipeline {
                 }
         }
         }
+        */
+        
         stage ('Building and Pushing Image to Quay') {
             steps {
                 script {
