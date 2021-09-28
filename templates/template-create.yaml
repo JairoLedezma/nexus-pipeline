@@ -472,8 +472,11 @@ objects:
             name: "${KIE_SERVER_IMAGE_STREAM_NAME}:${IMAGE_STREAM_TAG}"
       output:
         to:
-          kind: ImageStreamTag
-          name: "${APPLICATION_NAME}-kieserver:latest"
+          kind: DockerImage
+          name: >-
+            "${NEXUS_URL}"
+          pushSecret:
+            name: "${NEXUS_CREDENTIALS}"
       triggers:
         - type: GitHub
           github:
