@@ -14,7 +14,6 @@ pipeline {
         stage ('Maven Build') {
             steps {
                   sh "mvn install"
-                    sh "mvn package -DskipTests=true"
             }
         }
         stage ('Deploy Kieserver') {
@@ -33,6 +32,7 @@ pipeline {
                                     
                                  } catch (err) {
                                     // echo err.getMessage()
+                                     continue
                                 }
                             } 
                          
