@@ -32,7 +32,7 @@ pipeline {
                                     createResources.logs('-f')
                                     
                                  } catch (err) {
-                                    echo err.getMessage()
+                                    // echo err.getMessage()
                                 }
                             } 
                          
