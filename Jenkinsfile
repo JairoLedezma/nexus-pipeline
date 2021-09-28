@@ -5,19 +5,6 @@ pipeline {
         maven 'maven-3.6.3'
         jdk 'jdk11'
     }
-    /*
-    environment {
-        // This can be nexus3 or nexus2
-        NEXUS_VERSION = "nexus3"
-        // This can be http or https
-        NEXUS_PROTOCOL = "https"
-        // Where your Nexus is running
-        NEXUS_URL = "nexus-https-rp-testenv.apps.pfocp4.nvsconsulting.io/#browse/browse:nexus-repo:5000"
-        // Repository where we will upload the artifact
-        NEXUS_REPOSITORY = "nexus-repo"
-        // Jenkins credential id to authenticate to Nexus OSS
-        NEXUS_CREDENTIAL_ID = "nexus-credentials"
-    }*/
     stages {
         stage('Fetching Git Repository') {
             steps {
@@ -55,52 +42,14 @@ pipeline {
            }
         }
         
-        /*
-        stage("publish to nexus") {
-            steps {
-                script {
-                    // Read POM xml file using 'readMavenPom' step , this step 'readMavenPom' is included in: https://plugins.jenkins.io/pipeline-utility-steps
-                    pom = readMavenPom file: "pom.xml";
-                    sh "cd target"
-                        
-
-                    
-                        
-                        nexusArtifactUploader(
-                            nexusVersion: NEXUS_VERSION,
-                            protocol: NEXUS_PROTOCOL,
-                            nexusUrl: NEXUS_URL,
-                            groupId: pom.groupId,
-                            version: pom.version,
-                            repository: NEXUS_REPOSITORY,
-                            credentialsId: NEXUS_CREDENTIAL_ID,
-                            artifacts: [
-                                // Artifact generated such as .jar, .ear and .war files.
-                                [file: 'target/IterationDemo-1.0.0-SNAPSHOT.jar',
-                                type: 'kjar'],
-
-                                // Lets upload the pom.xml file for additional information for Transitive dependencies
-                                [artifactId: pom.artifactId,
-                                classifier: '',
-                                file: "pom.xml",
-                                type: "pom"]
-                            ]
-                        );
-
-                
-                }
-        }
-        }
-        */
-        
-        stage ('Building and Pushing Image to Quay') {
+        stage ('Building and Pushing Image to Nexus') {
             steps {
                 script {
                     openshift.withCluster( CLUSTER_NAME ) {
                         openshift.withProject( PROJECT_NAME ){
                             def buildConfig = openshift.selector( 'buildconfig/' + BUILD_CONFIG )
                             buildConfig.startBuild()
-                            buildConfig.logs('-f')
+                            //buildConfig.logs('-f')
                         }
                     }
                 }    
