@@ -23,6 +23,16 @@ message: |-
 
   You must create the secret named "${CREDENTIALS_SECRET}" containing the KIE_ADMIN_USER and KIE_ADMIN_PWD values and the secret named "${KIE_SERVER_HTTPS_SECRET}" containing the ${KIE_SERVER_HTTPS_KEYSTORE} file used for serving secure content.
 parameters:
+  - displayName: NEXUS_URL
+    description: The nexus url of the application
+    name: NEXUS_URL
+    value: ""
+    required: true
+  - displayName: NEXUS_CREDENTIALS
+    description: The credentials for the nexus server
+    name: APPLICATION_NAME
+    value: ""
+    required: true
   - displayName: Application Name
     description: The name for the application.
     name: APPLICATION_NAME
