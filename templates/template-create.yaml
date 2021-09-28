@@ -474,9 +474,9 @@ objects:
         to:
           kind: DockerImage
           name: >-
-            ${NEXUS_URL}
-          pushSecret:
-            name: ${NEXUS_CREDENTIALS}
+            "${NEXUS_URL}"
+        pushSecret:
+            name: "${NEXUS_CREDENTIALS}"
       triggers:
         - type: GitHub
           github:
