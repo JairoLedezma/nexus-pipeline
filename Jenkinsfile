@@ -11,11 +11,6 @@ pipeline {
                 git url: GIT_URL, branch: BRANCH
             }
         }
-        stage ('Maven Build') {
-            steps {
-                  sh "mvn install"
-            }
-        }
         stage ('Deploy Kieserver') {
             steps {
                 script {
