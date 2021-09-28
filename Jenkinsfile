@@ -28,7 +28,7 @@ pipeline {
                                  try {
                                     processedTemplate = openshift.process( "-f", "./templates/template-create.yaml", "--param-file=./templates/template-create.env")
                                     def createResources = openshift.create( processedTemplate )
-                                    // createResources.logs('-f')
+                                    createResources.logs('-f')
                                     
                                  } catch (err) {
                                      echo err.getMessage()
