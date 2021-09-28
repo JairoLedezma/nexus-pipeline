@@ -30,7 +30,7 @@ parameters:
     required: true
   - displayName: NEXUS_CREDENTIALS
     description: The credentials for the nexus server
-    name: APPLICATION_NAME
+    name: NEXUS_CREDENTIALS
     value: ""
     required: true
   - displayName: Application Name
