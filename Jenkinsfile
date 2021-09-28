@@ -3,7 +3,7 @@ pipeline {
     tools{
         oc 'oc'
         maven 'maven-3.6.3'
-        jdk 'jdk11'
+        jdk 'jdk8'
     }
     stages {
         stage('Fetching Git Repository') {
