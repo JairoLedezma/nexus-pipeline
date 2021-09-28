@@ -31,8 +31,8 @@ pipeline {
                                     createResources.logs('-f')
                                     
                                  } catch (err) {
-                                    // echo err.getMessage()
-                                     continue
+                                     echo err.getMessage()
+                                     
                                 }
                             } 
                          
@@ -49,7 +49,7 @@ pipeline {
                         openshift.withProject( PROJECT_NAME ){
                             def buildConfig = openshift.selector( 'buildconfig/' + BUILD_CONFIG )
                             buildConfig.startBuild()
-                            //buildConfig.logs('-f')
+                            buildConfig.logs('-f')
                         }
                     }
                 }    
