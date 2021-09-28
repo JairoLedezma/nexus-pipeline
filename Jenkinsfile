@@ -30,8 +30,6 @@ pipeline {
                     sh "mvn package -DskipTests=true"
             }
         }
-     
-        /*
         stage ('Deploy Kieserver') {
             steps {
                 script {
@@ -57,7 +55,7 @@ pipeline {
            }
         }
         
-        
+        /*
         stage("publish to nexus") {
             steps {
                 script {
